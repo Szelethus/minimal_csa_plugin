@@ -119,7 +119,11 @@ set (CUSTOM_LD_FLAGS "")
 # reporting we only have to link against the libs that Clang itself doesn't load
 # e.g. since we're calling Clang with --analyze, and the Static Analyzer does
 # not use libASTMatchers, that means we have to load that ourself
-set (LIBS clangTooling clangFrontend clangASTMatchers clangIndex)
+set (LIBS
+  clangTooling
+  clangFrontend
+  clangASTMatchers
+  clangIndex)
 
 include_directories(
   "${LLVM_INCLUDE_DIR}"
